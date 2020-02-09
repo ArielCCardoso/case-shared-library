@@ -6,8 +6,8 @@ def call(args) {
 
   steps.container("${slave}"){
     steps.dir("${dir}"){
-      args.steps.sh(script: "docker build -t ${image} .", returnStdout:true).trim()
-      args.steps.sh(script: "docker push ${image}", returnStdout:true).trim()
+      args.steps.sh(script: "docker build -t arielccardoso/${image} .", returnStdout:true).trim()
+      args.steps.sh(script: "docker push arielccardoso/${image}", returnStdout:true).trim()
     }
   }
 }
